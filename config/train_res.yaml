@@ -1,0 +1,37 @@
+seed: 1024
+FOLD_LIST: [0,1,2,3]
+baseline: 'seresnext101'
+
+data_path: '../../data/processed/train/'
+csv_path: '../../data/processed/train_info.csv'
+output_dir: '../result/seresnext101/'
+val_patient_numbers_list: [
+        [63921], # fold0
+        [68250], # fold1
+        [65631], # fold2
+        [67177], # fold3
+    ]
+
+train_batch_size: 4
+val_batch_size: 4
+num_workers: 1
+lr: 1e-3
+n_epochs: 20
+n_cls: 1
+pos_to_neg: 1  #3718->1 5866->0
+# input_resolution: (320,320)
+resolution: (512,512)
+dice_threshold: 0.5
+small_mask_threshold: 10
+multiplier_bin: 20
+binned_max: 4
+deepsupervision: True
+clfhead: True
+clf_threshold: null
+early_stopping: True
+pretrain_path_list: null
+
+
+T_0: 25
+eta_min: 1e-5
+scheduler_step_per_epoch: True
